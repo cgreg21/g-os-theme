@@ -4,19 +4,23 @@ Thème GTK et GNOME Shell pour GNOME 51, avec une direction visuelle inspirée d
 
 ## Documentation
 
-Le manuel explique l'architecture du thème, son installation, son activation, son retour arrière et la personnalisation CSS des différents moteurs.
+Le manuel technique couvre progressivement l'architecture, l'installation et la personnalisation détaillée des composants.
 
-- [Sommaire de la documentation](docs/README.md)
-- [Présentation et architecture](docs/01-architecture.md)
-- [Installation, activation et retour arrière](docs/02-installation.md)
-- [Comprendre et modifier les feuilles CSS](docs/03-css-et-personnalisation.md)
+- [Sommaire complet](docs/README.md)
+- [Architecture](docs/01-architecture.md)
+- [Installation et activation](docs/02-installation.md)
+- [CSS et personnalisation](docs/03-css-et-personnalisation.md)
+- [Composants GNOME Shell](docs/04-gnome-shell-composants.md)
+- [Widgets GTK 3](docs/05-gtk3-widgets.md)
+- [GTK 4 et Libadwaita](docs/06-gtk4-libadwaita.md)
+- [Palette et mode sombre](docs/07-palette-couleurs-mode-sombre.md)
 
 ## Composants
 
-- **GNOME Shell** : top bar, calendrier, quick settings, notifications, overview, dash, menus et dialogs.
+- **GNOME Shell** : barre supérieure, calendrier, Quick Settings, notifications, vue d'ensemble, dash, menus et dialogues.
 - **GTK 3** : widgets classiques et applications GTK 3.
-- **GTK 4 / Libadwaita** : styles compatibles avec les widgets GTK 4 et les applications Libadwaita, dans les limites de personnalisation exposées par ces bibliothèques.
-- **Dark mode** : variantes claires et sombres.
+- **GTK 4 / Libadwaita** : styles compatibles avec les widgets GTK 4 et les applications qui autorisent la personnalisation CSS.
+- **Mode sombre** : variantes claires et sombres.
 
 ## Installation
 
@@ -38,14 +42,14 @@ Les sources sont organisées par moteur de rendu :
 
 - `gnome-shell/` : feuille de style GNOME Shell.
 - `gtk-3.0/` : styles GTK 3.
-- `gtk-4.0/` : styles GTK 4 et Libadwaita.
+- `gtk-4.0/` : styles GTK 4.
 - `assets/` : ressources locales du thème.
 
 Aucune ressource distante n'est requise à l'exécution.
 
 ## Compatibilité
 
-Cible initiale : GNOME Shell 51, GTK 3 et GTK 4. Les sélecteurs internes de GNOME Shell peuvent évoluer entre versions ; valider le rendu sur une session de test avant déploiement.
+Cible initiale : GNOME Shell 51, GTK 3 et GTK 4. Les sélecteurs internes de GNOME Shell peuvent évoluer entre versions ; valider le rendu sur une session de test avant déploiement. Les applications Libadwaita peuvent ignorer les thèmes GTK tiers par conception.
 
 ## Licence
 
