@@ -2,6 +2,15 @@
 
 Thème GTK et GNOME Shell pour GNOME 51, avec une direction visuelle inspirée de macOS : surfaces claires, contrastes doux, accent bleu, coins arrondis et hiérarchie typographique nette.
 
+## Documentation
+
+Le manuel explique l'architecture du thème, son installation, son activation, son retour arrière et la personnalisation CSS des différents moteurs.
+
+- [Sommaire de la documentation](docs/README.md)
+- [Présentation et architecture](docs/01-architecture.md)
+- [Installation, activation et retour arrière](docs/02-installation.md)
+- [Comprendre et modifier les feuilles CSS](docs/03-css-et-personnalisation.md)
+
 ## Composants
 
 - **GNOME Shell** : top bar, calendrier, quick settings, notifications, overview, dash, menus et dialogs.
