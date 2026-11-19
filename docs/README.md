@@ -15,6 +15,8 @@ Ce manuel accompagne G-OS, un thème communautaire destiné à GNOME 51. Il pré
 9. [Typographie et Fontconfig](09-typographie-fontconfig.md) — installer des polices, comprendre les familles de repli et régler la typographie.
 10. [Icônes et icônes symboliques](10-icones-symboliques.md) — distinguer icônes d'applications, icônes symboliques et thème d'icônes.
 11. [Curseurs et effets visuels](11-curseurs-ombres-transparence.md) — comprendre Xcursor, ombres, transparence, rayons et transitions.
+12. [Contrôles avancés](12-controles-avances.md) — états, boutons, champs, listes, cases à cocher, curseurs et progressions.
+13. [Échelle et accessibilité](13-echelle-responsive-accessibilite.md) — tailles de texte, mise à l'échelle, contraste, focus clavier et animations.
 
 ## Règles de lecture
 
