@@ -1,6 +1,6 @@
 # G-OS Theme
 
-Thème GTK et GNOME Shell pour GNOME 51, avec une direction visuelle inspirée de macOS.
+Thème GTK et GNOME Shell 51, avec une direction visuelle inspirée de macOS.
 
 ## Composants
 

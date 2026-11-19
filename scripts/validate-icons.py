@@ -15,5 +15,5 @@ for theme in ("G-OS","G-OS-dark"):
   except ET.ParseError as e:errors.append(str(svg)+": "+str(e))
  if not (base/"512x512/apps/org.gnome.GNOME.svg").is_file():errors.append(theme+": missing 512px GNOME logo")
  if not list((base/"scalable/actions").glob("*-symbolic.svg")):errors.append(theme+": missing symbolic files")
-if errors:print("\\n".join(errors));sys.exit(1)
+if errors:print("\n".join(errors));sys.exit(1)
 print("G-OS light/dark icon themes: manifests and SVG assets valid.")

@@ -15,7 +15,7 @@ Les ressources sont générées par `scripts/generate-icons.py` :
 - `scalable/places/` : dossiers et emplacements.
 - `scalable/mimetypes/` : types de fichiers.
 
-Chaque variante possède son `index.theme` et hérite d'Adwaita et hicolor pour les noms non couverts.
+Chaque variante possède son `index.theme` et hérite d'Adwaita et hicolor pour les noms non couverts. Le logo GNOME est fourni seul, en monochrome noir sur fond clair et blanc sur fond sombre, sans l'intégrer dans une vignette. Le nom et le pied GNOME sont des marques de la GNOME Foundation ; vérifier ses règles et obtenir les autorisations nécessaires avant toute redistribution publique du logo.
 
 ## Couverture
 
