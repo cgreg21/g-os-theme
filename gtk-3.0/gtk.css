@@ -1,0 +1,37 @@
+/* G-OS GTK 3 — light */
+@define-color theme_bg_color #f5f6f8;
+@define-color theme_fg_color #20242c;
+@define-color theme_base_color #ffffff;
+@define-color theme_text_color #20242c;
+@define-color theme_selected_bg_color #0878e8;
+@define-color theme_selected_fg_color #ffffff;
+@define-color theme_unfocused_bg_color #f5f6f8;
+@define-color theme_unfocused_fg_color #747d8b;
+@define-color borders rgba(30,42,58,.14);
+@define-color accent_color #0878e8;
+
+* { -GtkWidget-focus-line-width: 2; -GtkWidget-focus-padding: 2; }
+window, .background { background-color: @theme_bg_color; color: @theme_fg_color; }
+.view, textview, treeview, iconview { background-color: @theme_base_color; color: @theme_text_color; }
+button, .button {
+  color: @theme_fg_color; background-image: none; background-color: #ffffff;
+  border: 1px solid @borders; border-radius: 9px; box-shadow: none;
+  padding: 6px 12px; text-shadow: none;
+}
+button:hover { background-color: #edf4fc; border-color: rgba(8,120,232,.35); }
+button:active, button:checked { background-color: #e2efff; }
+button:disabled { color: #a3aab5; background-color: #f0f2f5; }
+button:focus { outline: 2px solid alpha(@accent_color,.45); outline-offset: 1px; }
+entry, spinbutton, combobox, .linked > button {
+  background-color: #ffffff; color: @theme_text_color; border: 1px solid @borders;
+  border-radius: 8px; min-height: 28px; padding: 4px 8px; box-shadow: none;
+}
+entry:focus, spinbutton:focus, combobox:focus { border-color: @accent_color; }
+headerbar { background-color: #f8f9fb; color: @theme_fg_color; border-bottom: 1px solid @borders; box-shadow: none; min-height: 42px; }
+headerbar button { background-color: transparent; border-color: transparent; }
+.sidebar { background-color: #eef1f5; border-right: 1px solid @borders; }
+.sidebar row { border-radius: 8px; margin: 2px 6px; padding: 5px; }
+.sidebar row:selected { background-color: #dcecff; color: #075eb5; }
+selection { background-color: @theme_selected_bg_color; color: @theme_selected_fg_color; }
+progressbar trough, scale trough { background-color: #e4e8ee; border-radius: 99px; }
+progressbar progress, scale highlight { background-color: @accent_color; border-radius: 99px; }

@@ -1,0 +1,22 @@
+/* G-OS GTK 4 / Libadwaita — light */
+@define-color window_bg_color #f5f6f8;
+@define-color window_fg_color #20242c;
+@define-color view_bg_color #ffffff;
+@define-color view_fg_color #20242c;
+@define-color headerbar_bg_color #f8f9fb;
+@define-color headerbar_fg_color #20242c;
+@define-color card_bg_color #ffffff;
+@define-color card_fg_color #20242c;
+@define-color popover_bg_color #ffffff;
+@define-color popover_fg_color #20242c;
+@define-color accent_bg_color #0878e8;
+@define-color accent_fg_color #ffffff;
+@define-color accent_color #0878e8;
+@define-color borders rgba(30,42,58,.14);
+
+window, .background { background: @window_bg_color; color: @window_fg_color; }
+headerbar { background: @headerbar_bg_color; color: @headerbar_fg_color; box-shadow: none; border-bottom: 1px solid @borders; }
+button, .button { border-radius: 9px; }
+entry, textview, spinbutton { border-radius: 8px; }
+.card, .boxed-list { background: @card_bg_color; color: @card_fg_color; border: 1px solid @borders; border-radius: 12px; }
+popover > contents, popover contents { background: @popover_bg_color; color: @popover_fg_color; border: 1px solid @borders; border-radius: 12px; }

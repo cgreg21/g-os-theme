@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=G-OS
+Comment=macOS-inspired GNOME theme for GNOME 51
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=G-OS
+MetacityTheme=Adwaita
+IconTheme=Adwaita
+CursorTheme=Adwaita

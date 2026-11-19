@@ -1,0 +1,26 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate theme files
+        run: |
+          test -s gnome-shell/gnome-shell.css
+          test -s gtk-3.0/gtk.css
+          test -s gtk-3.0/gtk-dark.css
+          test -s gtk-4.0/gtk.css
+          test -s gtk-4.0/gtk-dark.css
+          bash -n install.sh
+          grep -q 'GNOME Shell 51' README.md
+      - name: Check local-only assets
+        run: |
+          if grep -R -nE 'https?://' gnome-shell gtk-3.0 gtk-4.0; then
+            echo "Theme stylesheets must not load remote resources."
+            exit 1
+          fi

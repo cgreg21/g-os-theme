@@ -1,0 +1,17 @@
+/* G-OS GTK 3 — dark */
+@define-color theme_bg_color #20242c;
+@define-color theme_fg_color #edf0f5;
+@define-color theme_base_color #292e38;
+@define-color theme_text_color #edf0f5;
+@define-color theme_selected_bg_color #2589ed;
+@define-color theme_selected_fg_color #ffffff;
+@define-color borders rgba(220,230,245,.16);
+@define-color accent_color #4da3ff;
+@import url("gtk.css");
+window, .background { background-color: @theme_bg_color; color: @theme_fg_color; }
+.view, textview, treeview, iconview, entry, spinbutton, combobox { background-color: @theme_base_color; color: @theme_text_color; }
+button { background-color: #303744; color: @theme_fg_color; border-color: @borders; }
+button:hover { background-color: #394455; }
+headerbar { background-color: #252a33; color: @theme_fg_color; }
+.sidebar { background-color: #252a33; }
+.sidebar row:selected { background-color: #183e66; color: #ffffff; }
