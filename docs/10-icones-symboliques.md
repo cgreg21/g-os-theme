@@ -8,7 +8,8 @@ Les ressources sont générées par `scripts/generate-icons.py` :
 
 - `icons/G-OS/` : variante claire.
 - `icons/G-OS-dark/` : variante sombre.
-- `512x512/apps/` : logo GNOME en SVG 512 × 512.
+- `assets/gnome-logo.svg` : fichier source du logo GNOME autonome, SVG 512 px.
+- `512x512/apps/` : copie générée du logo GNOME.
 - `scalable/apps/` : icônes d'applications SVG.
 - `scalable/actions/` : commandes symboliques.
 - `scalable/status/` : états symboliques.
