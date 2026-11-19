@@ -18,6 +18,8 @@ Le manuel technique couvre progressivement l'architecture, l'installation et la 
 - [Typographie et Fontconfig](docs/09-typographie-fontconfig.md)
 - [Icônes et icônes symboliques](docs/10-icones-symboliques.md)
 - [Curseurs et effets visuels](docs/11-curseurs-ombres-transparence.md)
+- [Contrôles avancés](docs/12-controles-avances.md)
+- [Échelle et accessibilité](docs/13-echelle-responsive-accessibilite.md)
 
 ## Composants
 
