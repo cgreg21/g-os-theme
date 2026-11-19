@@ -7,5 +7,5 @@ Encoding=UTF-8
 [X-GNOME-Metatheme]
 GtkTheme=G-OS
 MetacityTheme=Adwaita
-IconTheme=Adwaita
+IconTheme=G-OS
 CursorTheme=Adwaita
