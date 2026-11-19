@@ -11,6 +11,7 @@ Ce manuel accompagne G-OS, un thème communautaire destiné à GNOME 51. Il pré
 5. [GTK 3 : widgets](05-gtk3-widgets.md) — boutons, champs, en-têtes, listes, sélections et contrôles.
 6. [GTK 4 et Libadwaita](06-gtk4-libadwaita.md) — couleurs sémantiques, cartes, popovers et limites de personnalisation.
 7. [Palette et mode sombre](07-palette-couleurs-mode-sombre.md) — rôles de couleur, cohérence et validation des deux variantes.
+8. [Diagnostic et dépannage](08-diagnostic-depannage.md) — identifier le moteur, vérifier le chargement, lire les journaux et préparer un rapport de bug.
 
 ## Règles de lecture
 
