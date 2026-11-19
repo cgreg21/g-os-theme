@@ -20,6 +20,9 @@ Le manuel technique couvre progressivement l'architecture, l'installation et la 
 - [Curseurs et effets visuels](docs/11-curseurs-ombres-transparence.md)
 - [Contrôles avancés](docs/12-controles-avances.md)
 - [Échelle et accessibilité](docs/13-echelle-responsive-accessibilite.md)
+- [Extensions GNOME Shell](docs/14-extensions-gnome-shell.md)
+- [Inspection et débogage CSS](docs/15-inspection-debogage-css.md)
+- [Maintenance et publication](docs/16-structure-maintenance-publication.md)
 
 ## Composants
 
