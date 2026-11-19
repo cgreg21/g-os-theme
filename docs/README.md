@@ -12,6 +12,9 @@ Ce manuel accompagne G-OS, un thème communautaire destiné à GNOME 51. Il pré
 6. [GTK 4 et Libadwaita](06-gtk4-libadwaita.md) — couleurs sémantiques, cartes, popovers et limites de personnalisation.
 7. [Palette et mode sombre](07-palette-couleurs-mode-sombre.md) — rôles de couleur, cohérence et validation des deux variantes.
 8. [Diagnostic et dépannage](08-diagnostic-depannage.md) — identifier le moteur, vérifier le chargement, lire les journaux et préparer un rapport de bug.
+9. [Typographie et Fontconfig](09-typographie-fontconfig.md) — installer des polices, comprendre les familles de repli et régler la typographie.
+10. [Icônes et icônes symboliques](10-icones-symboliques.md) — distinguer icônes d'applications, icônes symboliques et thème d'icônes.
+11. [Curseurs et effets visuels](11-curseurs-ombres-transparence.md) — comprendre Xcursor, ombres, transparence, rayons et transitions.
 
 ## Règles de lecture
 
