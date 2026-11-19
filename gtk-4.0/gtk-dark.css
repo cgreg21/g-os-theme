@@ -1,4 +1,6 @@
-/* G-OS GTK 4 / Libadwaita — dark */
+/* G-OS GTK 4 — dark palette.
+ * Libadwaita applications may ignore custom GTK themes by design.
+ * These styles apply to GTK 4 applications that permit user CSS. */
 @define-color window_bg_color #20242c;
 @define-color window_fg_color #edf0f5;
 @define-color view_bg_color #292e38;
@@ -13,8 +15,9 @@
 @define-color accent_fg_color #ffffff;
 @define-color accent_color #4da3ff;
 @define-color borders rgba(220,230,245,.16);
-@import url("gtk.css");
 window, .background { background: @window_bg_color; color: @window_fg_color; }
-headerbar { background: @headerbar_bg_color; color: @headerbar_fg_color; border-bottom: 1px solid @borders; }
-.card, .boxed-list { background: @card_bg_color; color: @card_fg_color; border-color: @borders; }
-popover > contents, popover contents { background: @popover_bg_color; color: @popover_fg_color; border-color: @borders; }
+headerbar { background: @headerbar_bg_color; color: @headerbar_fg_color; border-bottom: 1px solid @borders; box-shadow: none; }
+button { border-radius: 9px; }
+entry, textview, spinbutton { border-radius: 8px; }
+.card, .boxed-list { background: @card_bg_color; color: @card_fg_color; border: 1px solid @borders; border-radius: 12px; }
+popover > contents, popover contents { background: @popover_bg_color; color: @popover_fg_color; border: 1px solid @borders; border-radius: 12px; }
