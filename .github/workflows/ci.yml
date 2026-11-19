@@ -18,6 +18,10 @@ jobs:
           test -s gtk-4.0/gtk-dark.css
           bash -n install.sh
           grep -q 'GNOME Shell 51' README.md
+      - name: Generate and validate icon themes
+        run: |
+          python3 scripts/generate-icons.py
+          python3 scripts/validate-icons.py
       - name: Check local-only assets
         run: |
           if grep -R -nE 'https?://' gnome-shell gtk-3.0 gtk-4.0; then
