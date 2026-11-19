@@ -17,6 +17,9 @@ Ce manuel accompagne G-OS, un thème communautaire destiné à GNOME 51. Il pré
 11. [Curseurs et effets visuels](11-curseurs-ombres-transparence.md) — comprendre Xcursor, ombres, transparence, rayons et transitions.
 12. [Contrôles avancés](12-controles-avances.md) — états, boutons, champs, listes, cases à cocher, curseurs et progressions.
 13. [Échelle et accessibilité](13-echelle-responsive-accessibilite.md) — tailles de texte, mise à l'échelle, contraste, focus clavier et animations.
+14. [Extensions GNOME Shell](14-extensions-gnome-shell.md) — identifier les classes d'extensions, personnaliser leurs composants et éviter les conflits.
+15. [Inspection et débogage CSS](15-inspection-debogage-css.md) — inspecteur GTK, journaux Shell, cascade et diagnostic reproductible.
+16. [Maintenance et publication](16-structure-maintenance-publication.md) — structure du dépôt, contrôles locaux, CI et publication fiable.
 
 ## Règles de lecture
 
