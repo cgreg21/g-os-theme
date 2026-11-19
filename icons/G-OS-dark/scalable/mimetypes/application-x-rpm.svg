@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 68 84">
+<path d="M13 5h28l14 14v57a4 4 0 0 1-4 4H13a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4z" fill="#303744" stroke="#aab5c4" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M41 5v14h14" fill="#424c5b" stroke="#aab5c4" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="m34 53 10 6v10l-10 6-10-6V59zM24 59l10 6 10-6m-10 6v10" fill="none" stroke="#bd7650" stroke-width="2.5" stroke-linejoin="round"/>
+<rect x="18" y="75" width="32" height="8" rx="3" fill="#222a35"/><text x="34" y="81" text-anchor="middle" font-family="Cantarell,sans-serif" font-size="5.5" font-weight="700" fill="#f1f4f8">RPM</text>
+</svg>

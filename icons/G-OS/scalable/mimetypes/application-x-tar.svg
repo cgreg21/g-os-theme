@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 68 84">
+<path d="M13 5h28l14 14v57a4 4 0 0 1-4 4H13a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4z" fill="#ffffff" stroke="#d6dce5" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M41 5v14h14" fill="#edf1f6" stroke="#d6dce5" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M25 57h18M34 57v16m-6 0h12" stroke="#c18a3e" stroke-width="3" stroke-linecap="round"/>
+<rect x="18" y="75" width="32" height="8" rx="3" fill="#f0f3f8"/><text x="34" y="81" text-anchor="middle" font-family="Cantarell,sans-serif" font-size="5.5" font-weight="700" fill="#263448">TAR</text>
+</svg>

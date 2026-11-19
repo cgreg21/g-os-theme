@@ -1,48 +1,39 @@
 # Icônes, icônes symboliques et thèmes d'icônes
 
-G-OS fournit deux thèmes Freedesktop : **G-OS** (clair) et **G-OS-dark** (sombre), inspirés du langage visuel macOS : silhouettes arrondies, dégradés subtils et couleurs distinctes.
+G-OS fournit deux thèmes Freedesktop : **G-OS** (clair) et **G-OS-dark** (sombre).
 
 ## Organisation
 
-Les ressources sont générées par `scripts/generate-icons.py` :
-
 - `icons/G-OS/` : variante claire.
 - `icons/G-OS-dark/` : variante sombre.
-- `assets/gnome-logo.svg` : fichier source du logo GNOME autonome, SVG 512 px.
-- `512x512/apps/` : copie générée du logo GNOME.
-- `scalable/apps/` : icônes d'applications SVG.
-- `scalable/actions/` : commandes symboliques.
-- `scalable/status/` : états symboliques.
+- `scalable/apps/` : icônes d'applications.
+- `scalable/actions/` et `scalable/status/` : pictogrammes symboliques.
 - `scalable/places/` : dossiers et emplacements.
-- `scalable/mimetypes/` : types de fichiers.
+- `scalable/mimetypes/` : icônes MIME statiques, versionnées individuellement dans Git.
+- `assets/gnome-logo.svg` : ressource autonome du logo GNOME.
 
-Chaque variante possède son `index.theme` et hérite d'Adwaita et hicolor pour les noms non couverts. Le logo GNOME est fourni seul, en monochrome noir sur fond clair et blanc sur fond sombre, sans l'intégrer dans une vignette. Le nom et le pied GNOME sont des marques de la GNOME Foundation ; vérifier ses règles et obtenir les autorisations nécessaires avant toute redistribution publique du logo.
+## Types MIME
 
-## Couverture
+Les icônes MIME sont de vrais fichiers SVG présents dans le dépôt. Elles ne sont pas fabriquées par `scripts/generate-icons.py`, ni par un autre générateur à l'installation.
 
-Le générateur fournit 33 identifiants d'applications GNOME et Firefox, avec des icônes carrées 512 × 512 redimensionnables. Les pictogrammes symboliques couvrent navigation, édition, fichiers, recherche, préférences, fenêtres, zoom, médias, audio, réseau, batterie, Bluetooth, verrouillage, alertes et états usuels.
+La couverture inclut PDF, ODT, DOC, ODS, XLS, CSV, ODP, PPT, TXT, Markdown, RTF, PNG, JPEG, SVG, WebP, GIF, MP3, FLAC, WAV, MP4, MKV, WebM, ZIP, 7Z, TAR, GZIP, JSON, XML, Python, shell, C, JavaScript, HTML, CSS, exécutables, bibliothèques, polices, images ISO, paquets DEB/RPM, bases SQLite et fichiers binaires génériques.
 
-Les symboliques utilisent une grille 24 × 24 et un tracé homogène de 1,8 px. Le premier plan est sombre dans G-OS et clair dans G-OS-dark. Les noms utilisent le suffixe Freedesktop `-symbolic`.
+Chaque icône utilise une feuille à coin plié, un signe central propre au format et un cartouche d'identification discret. Les familles ont des couleurs distinctes. Le rendu est flat, sans tuile carrée, sans reflet cyan et sans effets brillants. La variante sombre adapte le papier, les contours et le cartouche pour préserver le contraste.
+
+Les SVG sont stockés directement dans `icons/G-OS/scalable/mimetypes/` et `icons/G-OS-dark/scalable/mimetypes/`. Ils sont copiés tels quels par `install.sh`. Le générateur existant reste réservé aux autres ressources qu'il gère déjà et ne crée, ne modifie ni ne remplace ces fichiers MIME.
 
 ## Installation
 
-`install.sh` génère les ressources puis les installe dans `~/.local/share/icons`. Sélectionner une seule variante :
-
 ```sh
+./install.sh
 gsettings set org.gnome.desktop.interface icon-theme 'G-OS'
-# variante sombre :
+# ou
 gsettings set org.gnome.desktop.interface icon-theme 'G-OS-dark'
 ```
 
-## Vérification et extension
+## Vérification
 
 ```sh
 python3 scripts/generate-icons.py
 python3 scripts/validate-icons.py
 ```
-
-La CI valide les manifestes, les répertoires déclarés et le XML de chaque SVG. Pour ajouter une icône, utiliser le nom Freedesktop ou desktop-ID attendu et l'ajouter aux deux variantes.
-
-## Limites
-
-Le jeu couvre un ensemble étendu d'applications courantes, mais ne remplace pas chaque identifiant d'icône Linux. Les noms absents sont résolus par héritage Adwaita/hicolor. Les applications Libadwaita peuvent embarquer leurs propres icônes ou ignorer les thèmes GTK tiers.
