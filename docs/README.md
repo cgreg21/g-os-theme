@@ -1,28 +1,15 @@
-# Documentation de G-OS Theme
+# Documentation G-OS Theme
 
-Ce manuel accompagne le thème G-OS destiné à GNOME 51. Il explique son installation, son organisation, les règles de personnalisation et la validation du rendu. Il s'adresse aux personnes qui découvrent les thèmes GNOME comme aux contributeurs qui souhaitent modifier le thème proprement.
+Ce manuel accompagne G-OS, un thème communautaire destiné à GNOME 51. Il présente les composants, leur installation et les méthodes pour adapter le rendu sans modifier inutilement les fichiers sources.
 
 ## Parcours conseillé
 
-1. [Présentation et architecture](01-architecture.md)
-2. [Installation, activation et retour arrière](02-installation.md)
-3. [Comprendre et modifier les feuilles CSS](03-css-et-personnalisation.md)
+1. [Architecture du thème](01-architecture.md) — comprendre ce qui relève de GNOME Shell, GTK 3, GTK 4 et Libadwaita.
+2. [Installation et activation](02-installation.md) — installer, activer, vérifier et désinstaller le thème.
+3. [CSS et personnalisation](03-css-et-personnalisation.md) — comprendre les règles, les couleurs, les états et les sélecteurs.
 
-## Périmètre
+## Principe important
 
-Le dépôt fournit des styles pour GNOME Shell, GTK 3 et GTK 4/Libadwaita. Ces environnements n'utilisent pas exactement les mêmes moteurs ni les mêmes sélecteurs. Une règle CSS valide dans GTK n'est pas nécessairement valide dans GNOME Shell.
+GNOME Shell, GTK 3 et GTK 4 n'utilisent pas exactement le même moteur CSS. Une règle valide dans un fichier GTK n'est pas nécessairement valide dans GNOME Shell. Libadwaita limite volontairement la prise en charge des thèmes GTK tiers : ses applications peuvent conserver leur apparence Adwaita même si les fichiers GTK 4 sont installés.
 
-Le manuel distingue donc explicitement les trois cibles. Il ne promet pas de personnaliser les éléments que GNOME ou Libadwaita ne rendent pas configurables par un thème.
-
-## Principes
-
-- Travailler dans une copie du dépôt et conserver des changements ciblés.
-- Ne jamais modifier les fichiers système de GNOME pour installer le thème.
-- Tester les variantes claire et sombre.
-- Vérifier le rendu sur GNOME 51 réel : les détails internes du Shell peuvent changer.
-- Préférer les règles simples, lisibles et faciles à retirer.
-- Garder toutes les ressources du thème dans le dépôt ; aucune ressource distante n'est nécessaire à l'exécution.
-
-## Contribuer à la documentation
-
-Chaque chapitre doit expliquer le rôle du composant, indiquer le fichier source concerné, fournir un exemple minimal, détailler les effets attendus et proposer une méthode de vérification. Les captures doivent représenter le thème réellement exécuté, pas une maquette approximative.
+La réussite de la CI vérifie les fichiers et le script d'installation, pas le rendu graphique de chaque application.

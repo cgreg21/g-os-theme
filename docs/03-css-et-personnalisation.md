@@ -1,140 +1,99 @@
-# Comprendre et modifier les feuilles CSS
+# 3. Comprendre et modifier les feuilles CSS
 
-## 1. Commencer par identifier le moteur
+## 3.1 Une règle CSS
 
-Avant de modifier une règle, déterminez si le composant appartient à GNOME Shell, GTK 3 ou GTK 4/Libadwaita.
-
-- Un menu système ou la barre supérieure relève généralement de GNOME Shell.
-- Un widget d'une application GTK 3 relève de GTK 3.
-- Un widget d'une application GTK 4 relève de GTK 4, éventuellement avec les conventions Libadwaita.
-
-Une règle placée dans le mauvais dossier ne sera pas appliquée, même si sa syntaxe semble correcte.
-
-## 2. Anatomie d'une règle CSS
-
-Une règle associe un sélecteur à des déclarations :
+Une règle CSS comporte un sélecteur et un bloc de déclarations.
 
 ```css
-.example-widget {
-  color: #20242b;
+#panel {
+  background-color: #f8f9fb;
+  color: #252a33;
+}
+```
+
+- `#panel` cible l'élément dont l'identifiant est panel.
+- `background-color` définit la couleur de fond.
+- `color` définit la couleur du texte et de certains contenus hérités.
+
+Une déclaration se termine par un point-virgule. Les accolades délimitent le bloc.
+
+## 3.2 Couleurs
+
+Les couleurs sont écrites en hexadécimal ou avec une fonction telle que `rgba()`.
+
+```css
+background-color: #ffffff;
+color: #0878e8;
+border-color: rgba(30, 42, 58, 0.12);
+```
+
+Dans GTK, une couleur nommée peut être déclarée avec `@define-color`, puis réutilisée avec `@nom`.
+
+```css
+@define-color accent_color #0878e8;
+button:focus {
+  border-color: @accent_color;
+}
+```
+
+Les variables `@define-color` sont propres au langage CSS de GTK et ne doivent pas être copiées telles quelles dans la feuille GNOME Shell.
+
+## 3.3 Sélecteurs courants
+
+- `button` cible les boutons.
+- `entry` cible les champs de saisie GTK.
+- `.sidebar` cible un élément portant la classe sidebar.
+- `#panel` cible un élément portant l'identifiant panel.
+- `:hover` décrit le survol du pointeur.
+- `:focus` décrit l'état de focus clavier.
+- `:disabled` décrit un contrôle désactivé.
+- `:checked` décrit un contrôle activé lorsqu'il expose cet état.
+
+Les classes disponibles dépendent du composant et de sa version. Pour GNOME Shell, inspecte les noms de classes du composant dans les sources de GNOME Shell 51.
+
+## 3.4 États interactifs
+
+Un bouton doit rester compréhensible dans tous ses états. Exemple GTK :
+
+```css
+button {
   background-color: #ffffff;
-  border-radius: 10px;
-  padding: 8px 12px;
+  color: #20242c;
+  border: 1px solid rgba(30, 42, 58, 0.14);
+  border-radius: 9px;
 }
+button:hover { background-color: #edf4fc; }
+button:active { background-color: #e2efff; }
+button:disabled { color: #a3aab5; }
 ```
 
-Le sélecteur `.example-widget` cible les éléments qui portent cette classe. Les déclarations définissent des propriétés et leurs valeurs. Cet exemple illustre la syntaxe CSS générale ; il ne garantit pas que cette classe existe dans G-OS ou dans un composant GNOME.
+Ne supprime pas l'indication de focus clavier : elle est essentielle à l'accessibilité.
 
-Une règle n'a d'effet que si le moteur comprend la propriété et si le sélecteur correspond à un élément réellement présent.
+## 3.5 Arrondis, espacements et bordures
 
-## 3. Couleurs et contrastes
+- `border-radius` arrondit les angles lorsque le composant prend en charge cette propriété.
+- `border` dessine une bordure.
+- `padding` règle l'espace intérieur.
+- `margin` règle l'espace extérieur.
+- `box-shadow` ajoute une ombre lorsque le moteur l'implémente.
 
-Les propriétés les plus courantes sont :
+Toutes les propriétés ne sont pas disponibles dans toutes les couches. Teste une seule propriété sur un composant avant de généraliser.
 
-- `color` pour la couleur du texte ;
-- `background-color` pour la surface ;
-- `border-color` pour la bordure ;
-- `outline-color` pour le contour lorsque le moteur le prend en charge.
+## 3.6 Modifier la palette
 
-Exemple :
+Pour changer la couleur d'accent GTK 3 claire, modifie `@define-color accent_color` dans `gtk-3.0/gtk.css`. Pour le mode sombre, effectue le changement correspondant dans `gtk-3.0/gtk-dark.css`.
 
-```css
-.example-widget {
-  color: #20242b;
-  background-color: #f5f7fa;
-  border: 1px solid #dce2ea;
-}
-```
+Pour le Shell, modifie les couleurs utilisées dans `gnome-shell/gnome-shell.css`. Les couleurs du Shell ne sont pas automatiquement liées aux variables GTK.
 
-Vérifiez les états normal, survolé, actif, sélectionné et désactivé. Une couleur lisible dans l'état normal peut devenir illisible lorsqu'elle est utilisée avec une sélection ou une surface sombre.
+## 3.7 Méthode de travail
 
-## 4. Espacements et dimensions
+1. Crée une branche Git avant de modifier les sources.
+2. Modifie un seul composant.
+3. Recharge le thème ou relance la session de test.
+4. Vérifie les états normal, survol, focus, actif et désactivé.
+5. Vérifie le contraste du texte et des icônes.
+6. Étends la modification aux autres composants seulement après validation.
 
-Les propriétés de boîte courantes comprennent `margin`, `padding`, `min-width`, `min-height`, `max-width` et `max-height`, sous réserve de la prise en charge par le moteur concerné.
+## 3.8 Limites
 
-Exemple :
-
-```css
-.example-widget {
-  min-height: 36px;
-  padding: 6px 10px;
-  margin: 4px;
-}
-```
-
-Ne réduisez pas arbitrairement les zones interactives pour obtenir une capture plus compacte. Les contrôles doivent rester faciles à viser et les textes doivent pouvoir s'afficher sans être coupés.
-
-## 5. Bordures, rayons et ombres
-
-Les propriétés telles que `border`, `border-radius` et `box-shadow` sont courantes en CSS, mais leur disponibilité et leur rendu dépendent du moteur.
-
-Exemple de surface :
-
-```css
-.example-surface {
-  border: 1px solid rgba(30, 45, 65, 0.12);
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(20, 30, 45, 0.08);
-}
-```
-
-Dans GNOME Shell, vérifiez le rendu réel : certaines propriétés CSS web ne sont pas prises en charge ou peuvent se comporter différemment.
-
-## 6. États interactifs
-
-Les pseudo-classes CSS usuelles comprennent `:hover`, `:active`, `:focus` et `:disabled`, mais les moteurs GNOME disposent aussi de conventions propres aux widgets et aux états.
-
-Ne supposez pas qu'une pseudo-classe web fonctionne partout. Consultez la documentation du moteur et inspectez le composant avec les outils adaptés.
-
-Exemple générique :
-
-```css
-.example-button:hover {
-  background-color: #e8eef8;
-}
-
-.example-button:active {
-  background-color: #d8e4f5;
-}
-```
-
-Cet exemple est un point de départ pédagogique. Adaptez le sélecteur aux classes réellement exposées par le composant ciblé.
-
-## 7. Méthode de modification sûre
-
-1. Identifiez le composant et son moteur.
-2. Recherchez sa classe dans les sources ou dans l'inspecteur approprié.
-3. Repérez la règle existante la plus proche.
-4. Modifiez cette règle au lieu d'ajouter plusieurs surcharges concurrentes.
-5. Testez le composant dans son état normal et ses états interactifs.
-6. Testez les variantes claire et sombre.
-7. Vérifiez les autres composants qui partagent le même sélecteur.
-
-Conservez les sélecteurs spécifiques. Une règle globale comme `* { ... }` peut modifier involontairement des icônes, des champs de saisie, des menus et des contrôles imbriqués.
-
-## 8. Outils de diagnostic
-
-Pour rechercher une classe ou une propriété dans le dépôt :
-
-```bash
-grep -RIn --include='*.css' 'nom-de-classe' gnome-shell gtk-3.0 gtk-4.0
-```
-
-Pour afficher les modifications locales :
-
-```bash
-git diff --check
-git diff
-```
-
-`git diff --check` détecte notamment des erreurs d'espacement et des marqueurs de conflit ; il ne valide pas la syntaxe ni le rendu CSS.
-
-## 9. Valider sans risquer sa session principale
-
-Les changements de style GNOME Shell peuvent rendre l'interface difficile à utiliser si une règle provoque un problème. Travaillez par petites modifications et gardez un moyen de revenir au thème précédent.
-
-Validez les trois cibles séparément. Une feuille GTK correcte ne prouve pas que la feuille Shell est correcte. Une capture d'écran doit être prise sur la version de GNOME réellement visée.
-
-## 10. Règle de maintenance
-
-Avant d'ajouter une propriété, vérifiez qu'elle est utile, comprise par le moteur et cohérente avec les autres composants. Préférez une règle courte et ciblée à une succession de correctifs contradictoires. Le thème doit rester facile à lire, à tester et à maintenir.
+Une feuille de style ne peut pas créer un composant qui n'existe pas, changer le comportement fonctionnel d'un widget ou garantir le style d'une application qui refuse les thèmes externes. Le CSS GNOME Shell est également lié aux classes internes de la version de GNOME installée.
