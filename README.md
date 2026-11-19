@@ -14,6 +14,10 @@ Le manuel technique couvre progressivement l'architecture, l'installation et la 
 - [Widgets GTK 3](docs/05-gtk3-widgets.md)
 - [GTK 4 et Libadwaita](docs/06-gtk4-libadwaita.md)
 - [Palette et mode sombre](docs/07-palette-couleurs-mode-sombre.md)
+- [Diagnostic et dépannage](docs/08-diagnostic-depannage.md)
+- [Typographie et Fontconfig](docs/09-typographie-fontconfig.md)
+- [Icônes et icônes symboliques](docs/10-icones-symboliques.md)
+- [Curseurs et effets visuels](docs/11-curseurs-ombres-transparence.md)
 
 ## Composants
 
@@ -43,7 +47,7 @@ Les sources sont organisées par moteur de rendu :
 - `gnome-shell/` : feuille de style GNOME Shell.
 - `gtk-3.0/` : styles GTK 3.
 - `gtk-4.0/` : styles GTK 4.
-- `assets/` : ressources locales du thème.
+- `index.theme` : métadonnées du métathème, dont les thèmes d'icônes et de curseurs déclarés.
 
 Aucune ressource distante n'est requise à l'exécution.
 
